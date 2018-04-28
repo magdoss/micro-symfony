@@ -49,9 +49,4 @@ class MicroKernel extends Kernel
         return dirname(__DIR__).'/app/logs/'.$this->environment;
     }
 
-    public function helloSymfony($version)
-    {
-        return new Response('Hi Symfony version '.$version);
-    }
-
 }
