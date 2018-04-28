@@ -1,0 +1,14 @@
+{
+  "name": "semahler/micro-symfony",
+  "description": "small framework based on symfony's microKernelTrait",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Sebastian Mahler",
+      "email": "sebastian.mahler@googlemail.com"
+    }
+  ],
+  "require": {
+    "symfony/symfony": "^3.4"
+  }
+}

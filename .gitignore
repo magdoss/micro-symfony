@@ -1,2 +1,9 @@
 #IDE
 .idea
+
+# composer
+composer.phar
+composer.lock
+
+# directories
+/vendor
