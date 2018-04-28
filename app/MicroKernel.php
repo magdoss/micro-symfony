@@ -37,7 +37,7 @@ class MicroKernel extends Kernel
          * dynamically adding the defined routes from every bundle
          * e.g. $routes->import(__DIR__.'/../src/<BundleName>/Controller/', '/', 'annotation');
          */
-        $routes->import(__DIR__.'/../src/TestBundle/Controller/', '/', 'annotation');
+        $routes->import(__DIR__.'/config/routing.yml');
 
     }
 

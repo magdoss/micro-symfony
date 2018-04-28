@@ -1,4 +1,7 @@
+imports:
+    - { resource: services.yml }
+
 framework:
-  secret: "micro-symf"
-  templating:
-    engines: ['twig']
+    secret: "micSymf"
+    templating:
+        engines: ['twig']
