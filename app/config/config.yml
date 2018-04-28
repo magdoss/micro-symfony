@@ -1,5 +1,6 @@
 imports:
     - { resource: services.yml }
+    - { resource: "@ExampleBundle/Resources/config/services.yml" }
 
 framework:
     secret: "micSymf"

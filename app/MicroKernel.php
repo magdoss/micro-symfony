@@ -9,7 +9,6 @@ use Symfony\Bundle\FrameworkBundle\Kernel\MicroKernelTrait;
 use Symfony\Component\Routing\RouteCollectionBuilder;
 use Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle;
 use Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle;
-use ExampleBundle\ExampleBundle;
 use Symfony\Bundle\TwigBundle\TwigBundle;
 
 class MicroKernel extends Kernel
@@ -22,7 +21,7 @@ class MicroKernel extends Kernel
             new FrameworkBundle(),
             new SensioFrameworkExtraBundle(),
             new TwigBundle(),
-            new ExampleBundle()
+            new ExampleBundle\ExampleBundle(),
         ];
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
