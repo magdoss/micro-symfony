@@ -9,6 +9,12 @@
     }
   ],
   "require": {
-    "symfony/symfony": "^3.4"
+    "symfony/symfony": "^3.4",
+    "sensio/framework-extra-bundle": "~3.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "": "src/"
+    }
   }
 }

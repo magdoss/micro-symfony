@@ -1,6 +1,7 @@
 <?php
 
 use Symfony\Component\HttpFoundation\Request;
+
 require __DIR__.'/vendor/autoload.php';
 require __DIR__.'/app/MicroKernel.php';
 

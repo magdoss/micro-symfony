@@ -8,6 +8,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Kernel;
 use Symfony\Bundle\FrameworkBundle\Kernel\MicroKernelTrait;
 use Symfony\Component\Routing\RouteCollectionBuilder;
+use Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle;
 
 class MicroKernel extends Kernel
 {
@@ -15,13 +16,20 @@ class MicroKernel extends Kernel
 
     public function registerBundles() {
 
-        return [
-            new FrameworkBundle()
+        $bundles = [
+            new FrameworkBundle(),
+            new SensioFrameworkExtraBundle(),
         ];
+
+        return $bundles;
     }
 
     protected function configureRoutes(RouteCollectionBuilder $routes) {
-        $routes->add('/hello/symfony/{version}', 'kernel:helloSymfony');
+        /**
+         * dynamically adding the defined routes from every bundle
+         * e.g. $routes->import(__DIR__.'/../src/<BundleName>/Controller/', '/', 'annotation');
+         */
+
     }
 
     protected function configureContainer(ContainerBuilder $c, LoaderInterface $loader)
