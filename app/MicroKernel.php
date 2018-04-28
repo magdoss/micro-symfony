@@ -8,6 +8,7 @@ use Symfony\Component\HttpKernel\Kernel;
 use Symfony\Bundle\FrameworkBundle\Kernel\MicroKernelTrait;
 use Symfony\Component\Routing\RouteCollectionBuilder;
 use Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle;
+use Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle;
 use ExampleBundle\ExampleBundle;
 use Symfony\Bundle\TwigBundle\TwigBundle;
 
@@ -24,6 +25,10 @@ class MicroKernel extends Kernel
             new ExampleBundle()
         ];
 
+        if (in_array($this->getEnvironment(), array('dev', 'test'))) {
+            $bundles[] = new SensioGeneratorBundle();
+        }
+
         return $bundles;
     }
 
@@ -32,7 +37,7 @@ class MicroKernel extends Kernel
          * dynamically adding the defined routes from every bundle
          * e.g. $routes->import(__DIR__.'/../src/<BundleName>/Controller/', '/', 'annotation');
          */
-        $routes->import(__DIR__.'/../src/ExampleBundle/Controller/', '/', 'annotation');
+        $routes->import(__DIR__.'/../src/TestBundle/Controller/', '/', 'annotation');
 
     }
 
