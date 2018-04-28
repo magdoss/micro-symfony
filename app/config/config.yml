@@ -1,2 +1,4 @@
 framework:
   secret: "micro-symf"
+  templating:
+    engines: ['twig']

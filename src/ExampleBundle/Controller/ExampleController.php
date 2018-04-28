@@ -15,8 +15,11 @@ class ExampleController extends AbstractController
      */
     public function infoAction()
     {
-        return new Response(
-            '<html><body>infoAction</body></html>'
+        return $this->render(
+            'ExampleBundle::index.html.twig',
+            [
+                'title' => "Welcome!"
+            ]
         );
     }
 }

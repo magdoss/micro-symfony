@@ -9,6 +9,7 @@ use Symfony\Bundle\FrameworkBundle\Kernel\MicroKernelTrait;
 use Symfony\Component\Routing\RouteCollectionBuilder;
 use Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle;
 use ExampleBundle\ExampleBundle;
+use Symfony\Bundle\TwigBundle\TwigBundle;
 
 class MicroKernel extends Kernel
 {
@@ -19,6 +20,7 @@ class MicroKernel extends Kernel
         $bundles = [
             new FrameworkBundle(),
             new SensioFrameworkExtraBundle(),
+            new TwigBundle(),
             new ExampleBundle()
         ];
 
