@@ -1,6 +1,5 @@
 <?php
 
-use Doctrine\Common\Annotations\AnnotationRegistry;
 use Symfony\Bundle\FrameworkBundle\FrameworkBundle;
 use Symfony\Component\Config\Loader\LoaderInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -9,6 +8,7 @@ use Symfony\Component\HttpKernel\Kernel;
 use Symfony\Bundle\FrameworkBundle\Kernel\MicroKernelTrait;
 use Symfony\Component\Routing\RouteCollectionBuilder;
 use Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle;
+use ExampleBundle\ExampleBundle;
 
 class MicroKernel extends Kernel
 {
@@ -19,6 +19,7 @@ class MicroKernel extends Kernel
         $bundles = [
             new FrameworkBundle(),
             new SensioFrameworkExtraBundle(),
+            new ExampleBundle()
         ];
 
         return $bundles;
@@ -29,6 +30,7 @@ class MicroKernel extends Kernel
          * dynamically adding the defined routes from every bundle
          * e.g. $routes->import(__DIR__.'/../src/<BundleName>/Controller/', '/', 'annotation');
          */
+        $routes->import(__DIR__.'/../src/ExampleBundle/Controller/', '/', 'annotation');
 
     }
 
