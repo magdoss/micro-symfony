@@ -1,5 +1,6 @@
 <?php
 
+use Doctrine\Common\Annotations\AnnotationRegistry;
 use Symfony\Bundle\FrameworkBundle\FrameworkBundle;
 use Symfony\Component\Config\Loader\LoaderInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -25,9 +26,15 @@ class MicroKernel extends Kernel
 
     protected function configureContainer(ContainerBuilder $c, LoaderInterface $loader)
     {
-        $c->loadFromExtension('framework', [
-            'secret' => 'micro-symf',
-        ]);
+        $loader->load(__DIR__.'/config/config.yml');
+    }
+
+    public function getCacheDir() {
+        return dirname(__DIR__).'/app/cache/'.$this->environment;
+    }
+
+    public function getLogDir() {
+        return dirname(__DIR__).'/app/logs/'.$this->environment;
     }
 
     public function helloSymfony($version)
