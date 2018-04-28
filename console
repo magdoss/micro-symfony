@@ -1,0 +1,16 @@
+#!/usr/bin/env php
+<?php
+
+use Symfony\Bundle\FrameworkBundle\Console\Application;
+use Symfony\Component\Console\Input\ArgvInput;
+
+require __DIR__.'/vendor/autoload.php';
+
+$command_input = new ArgvInput();
+$environment = $command_input->getParameterOption(['--env', '-e'], getenv('SYMFONY_ENV') ?: 'dev');
+$is_debug = getenv('SYMFONY_DEBUG') !== '0' && !$command_input->hasParameterOption(['--no-debug', '']) && $environment !== 'prod';
+
+$kernel = new MicroKernel($environment, $is_debug);
+$application = new Application($kernel);
+
+$application->run($command_input);
