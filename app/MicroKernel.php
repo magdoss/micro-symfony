@@ -26,6 +26,7 @@ class MicroKernel extends Kernel
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
             $bundles[] = new SensioGeneratorBundle();
+            $bundles[] = new CodeSnifferBundle\CodeSnifferBundle();
         }
 
         return $bundles;
